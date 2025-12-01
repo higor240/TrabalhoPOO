@@ -9,6 +9,7 @@ package classes;
  * @author Higor
  */
 public class JogoFisico extends Jogo {
+    
     private int estoque;
 
     public JogoFisico(String nome, double preco, String plataforma, int estoque) {

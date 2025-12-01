@@ -4,6 +4,8 @@
  */
 package classes;
 
+import interfaces.TelaInicial;
+
 /**
  *
  * @author Higor
@@ -14,7 +16,9 @@ public class GameStore {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+        TelaInicial telaInicial = new TelaInicial();
+        telaInicial.setVisible(true);
+        telaInicial.setLocationRelativeTo(null);// pra centralizar a janela
     }
     
 }
