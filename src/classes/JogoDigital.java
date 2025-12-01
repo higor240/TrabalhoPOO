@@ -18,7 +18,11 @@ public class JogoDigital extends Jogo {
         this.chaveAtivacao = UUID.randomUUID().toString().substring(0, 12).toUpperCase();//para gera um chave aleatoria 
     }
 
+    public String getChaveAtivacao() {
+        return chaveAtivacao;
+    }
 
+    
     
     
     
