@@ -9,41 +9,26 @@ package gamestore;
  * @author Higor
  */
 public class JogoDigital extends Jogo {
+    
+    private String edicao;
 
-    public JogoDigital(String nome, double preco, String plataforma) {
+    public JogoDigital(String nome, double preco, String plataforma,String edicao) {
         super(nome, preco, plataforma);
-        
+        this.edicao = edicao;
     }
 
-    
-    public String getNome() {
-        return nome;
+    public String getEdicao() {
+        return edicao;
     }
 
-    
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setEdicao(String edicao) {
+        this.edicao = edicao;
     }
+    
+    
 
     
-    public double getPreco() {
-        return preco;
-    }
-
     
-    public void setPreco(double preco) {
-        this.preco = preco;
-    }
-
-    
-    public String getPlataforma() {
-        return plataforma;
-    }
-
-    
-    public void setPlataforma(String plataforma) {
-        this.plataforma = plataforma;
-    }
     
     
 }
