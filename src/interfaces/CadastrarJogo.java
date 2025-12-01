@@ -4,6 +4,11 @@
  */
 package interfaces;
 
+import classes.BibliotecaDeJogos;
+import classes.JogoDigital;
+import classes.JogoFisico;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Higor
@@ -23,6 +28,8 @@ public class CadastrarJogo extends javax.swing.JFrame {
         txtEstoque.setVisible(false);
         txtNome.setEditable(false);
         txtPreco.setEditable(false);
+        jComboBoxPlataforma.setEnabled(false);
+        jComboBoxVersao.setEnabled(false);
         
     }
 
@@ -66,6 +73,11 @@ public class CadastrarJogo extends javax.swing.JFrame {
         });
 
         btnSalvar.setText("SALVAR");
+        btnSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalvarActionPerformed(evt);
+            }
+        });
 
         btnDeletar.setText("DELETAR");
 
@@ -220,7 +232,46 @@ public class CadastrarJogo extends javax.swing.JFrame {
         btnNovo.setVisible(false);
         txtNome.setEditable(true);
         txtPreco.setEditable(true);
+        jComboBoxPlataforma.setEnabled(true);
+        jComboBoxVersao.setEnabled(true);
     }//GEN-LAST:event_btnNovoActionPerformed
+
+    private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
+        int indexPlataforma = jComboBoxPlataforma.getSelectedIndex();
+        int indexVersao = jComboBoxVersao.getSelectedIndex();
+        
+        if (txtNome.getText().isBlank() || txtPreco.getText().isBlank()) { // acho que nao esquecir nenhuma validacao
+            JOptionPane.showMessageDialog(null,"Preencha Todos Os campos!!");
+        }
+        else if(indexPlataforma == 0 && indexVersao == 0){
+           JOptionPane.showMessageDialog(null,"Escolha uma Plataforma e versao!!"); 
+        }
+        else if(indexPlataforma == 0){
+            JOptionPane.showMessageDialog(null,"Escolha uma Plataforma!!");
+        }
+        else if(indexVersao == 0){
+            JOptionPane.showMessageDialog(null,"Escolha uma Versao!!");
+        }
+        else if(indexVersao == 1 && txtEstoque.getText().isBlank()){
+            JOptionPane.showMessageDialog(null,"Determine a quantidade de estoque!!");
+        }else if(indexVersao == 1){
+            String Plataforma = (String) jComboBoxPlataforma.getSelectedItem();
+            JogoFisico jogoFisico = new JogoFisico(txtNome.getText(),Double.parseDouble(txtPreco.getText()),Plataforma,Integer.parseInt(txtEstoque.getText()));
+            BibliotecaDeJogos biblioteca = new BibliotecaDeJogos();
+            biblioteca.adicionarJogo(jogoFisico);
+            JOptionPane.showMessageDialog(null,"Salvo com Sucesso!!");
+            
+        }else if(indexVersao == 2){
+            String Plataforma = (String) jComboBoxPlataforma.getSelectedItem();
+            JogoDigital jogoDigital = new JogoDigital(txtNome.getText(),Double.parseDouble(txtPreco.getText()),Plataforma);
+            BibliotecaDeJogos biblioteca = new BibliotecaDeJogos();
+            biblioteca.adicionarJogo(jogoDigital);
+            JOptionPane.showMessageDialog(null,"Salvo com Sucesso!!");
+            
+            //falta mostrar na tabela
+        }
+        
+    }//GEN-LAST:event_btnSalvarActionPerformed
 
     /**
      * @param args the command line arguments

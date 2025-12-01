@@ -15,6 +15,7 @@ public class JogoFisico extends Jogo {
     public JogoFisico(String nome, double preco, String plataforma, int estoque) {
         super(nome, preco, plataforma);
         this.estoque = estoque;
+        
     }
 
     public int getEstoque() {

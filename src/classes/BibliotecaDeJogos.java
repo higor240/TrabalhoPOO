@@ -12,7 +12,7 @@ import java.util.ArrayList;
  */
 public class BibliotecaDeJogos {
     
-    private ArrayList<Jogo> BibliotecaJogos = new ArrayList<>();
+    private static ArrayList<Jogo> BibliotecaJogos = new ArrayList<>();
 
     public void adicionarJogo(Jogo jogo) {
         BibliotecaJogos.add(jogo);
