@@ -5,6 +5,8 @@
 package classes;
 
 import java.util.ArrayList;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -12,18 +14,33 @@ import java.util.ArrayList;
  */
 public class BibliotecaDeJogos {
     
-    private static ArrayList<Jogo> BibliotecaJogos = new ArrayList<>();
+    private static ArrayList<Jogo> biblioteca = new ArrayList<>();
+    
+    public void atualizarTabela(ArrayList<Jogo> lista, JTable tabela) {// acho q ta erradissimo isso aqui kkkkkkk
+    DefaultTableModel model = (DefaultTableModel) tabela.getModel(); 
+    model.setRowCount(0); 
+
+    for (Jogo jogo : lista) {
+        model.addRow(new Object[]{
+            jogo.getNome(),
+            jogo.getPreco(),
+            jogo.getPlataforma()
+        });
+    }
+}
+    
+    
 
     public void adicionarJogo(Jogo jogo) {
-        BibliotecaJogos.add(jogo);
+        biblioteca.add(jogo);
     }
 
     public void removerJogo(Jogo jogo) {
-        BibliotecaJogos.remove(jogo);
+        biblioteca.remove(jogo);
     }
     
     public ArrayList<Jogo> getJogos() {
-        return BibliotecaJogos;
+        return biblioteca;
     }
     
 }

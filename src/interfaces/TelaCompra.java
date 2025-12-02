@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package interfaces;
-
+import classes.BibliotecaDeJogos;
 /**
  *
  * @author Higor
@@ -81,7 +81,8 @@ public class TelaCompra extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void tblBibliotecaAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_tblBibliotecaAncestorAdded
-        // TODO add your handling code here:
+        BibliotecaDeJogos biblioteca = new BibliotecaDeJogos();
+        biblioteca.atualizarTabela(biblioteca.getJogos(), tblBiblioteca);
     }//GEN-LAST:event_tblBibliotecaAncestorAdded
 
     /**
