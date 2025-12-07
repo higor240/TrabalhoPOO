@@ -39,6 +39,8 @@ public class ComprarJogo extends javax.swing.JFrame {
         tblBiblioteca = new javax.swing.JTable();
         btnAdicionar = new javax.swing.JButton();
         btnFinalizarCompra = new javax.swing.JButton();
+        btnCarrinho = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -82,6 +84,17 @@ public class ComprarJogo extends javax.swing.JFrame {
             }
         });
 
+        btnCarrinho.setText("CARRINHO");
+        btnCarrinho.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCarrinhoActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("CATALOGO DE JOGOS");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -92,23 +105,33 @@ public class ComprarJogo extends javax.swing.JFrame {
                         .addGap(33, 33, 33)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(188, 188, 188)
+                        .addComponent(btnFinalizarCompra))
+                    .addGroup(layout.createSequentialGroup()
                         .addGap(172, 172, 172)
                         .addComponent(btnAdicionar))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(193, 193, 193)
-                        .addComponent(btnFinalizarCompra)))
+                        .addGap(214, 214, 214)
+                        .addComponent(btnCarrinho))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(146, 146, 146)
+                        .addComponent(jLabel1)))
                 .addContainerGap(63, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel1)
+                .addGap(28, 28, 28)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnAdicionar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnCarrinho)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnFinalizarCompra)
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
@@ -135,7 +158,15 @@ public class ComprarJogo extends javax.swing.JFrame {
         this.dispose();
         FinalizarCompra finalizar = new FinalizarCompra();
         finalizar.setVisible(true);
+        finalizar.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnFinalizarCompraActionPerformed
+
+    private void btnCarrinhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCarrinhoActionPerformed
+        this.dispose();
+        TelaCarrinho telaCarrinho = new TelaCarrinho();
+        telaCarrinho.setVisible(true);
+        telaCarrinho.setLocationRelativeTo(null);
+    }//GEN-LAST:event_btnCarrinhoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -164,7 +195,9 @@ public class ComprarJogo extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdicionar;
+    private javax.swing.JButton btnCarrinho;
     private javax.swing.JButton btnFinalizarCompra;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblBiblioteca;
     // End of variables declaration//GEN-END:variables

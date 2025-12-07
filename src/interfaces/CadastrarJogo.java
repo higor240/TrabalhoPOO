@@ -185,6 +185,10 @@ public class CadastrarJogo extends javax.swing.JFrame {
         txtPreco.setEditable(true);
         jComboBoxPlataforma.setEnabled(true);
         jComboBoxVersao.setEnabled(true);
+        jComboBoxPlataforma.setSelectedIndex(0);
+        jComboBoxVersao.setSelectedIndex(0);
+        
+        
     }//GEN-LAST:event_btnNovoActionPerformed
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
