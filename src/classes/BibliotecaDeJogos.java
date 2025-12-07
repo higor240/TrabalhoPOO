@@ -19,7 +19,6 @@ public class BibliotecaDeJogos {
     public void atualizarTabela(ArrayList<Jogo> lista, JTable tabela) {// acho q ta erradissimo isso aqui kkkkkkk
     DefaultTableModel model = (DefaultTableModel) tabela.getModel(); 
     model.setRowCount(0); 
-
     for (Jogo jogo : lista) {
         model.addRow(new Object[]{
             jogo.getNome(),
