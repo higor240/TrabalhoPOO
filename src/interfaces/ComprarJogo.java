@@ -152,6 +152,7 @@ public class ComprarJogo extends javax.swing.JFrame {
         Carrinho carrinho = new Carrinho();
         carrinho.adicionar(jogoSelecionado);
         JOptionPane.showMessageDialog(null, "Jogo adicionado ao carrinho!");
+        tblBiblioteca.clearSelection();
     }//GEN-LAST:event_btnAdicionarActionPerformed
 
     private void btnFinalizarCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFinalizarCompraActionPerformed

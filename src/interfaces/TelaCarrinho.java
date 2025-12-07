@@ -137,6 +137,7 @@ public class TelaCarrinho extends javax.swing.JFrame {
         carrinho.remover(jogoSelecionado);
         JOptionPane.showMessageDialog(null, "Jogo Removido!");
         carrinho.AtualizarTabela(carrinho.getItens(), tblCarrinho);
+        tblCarrinho.clearSelection();
     }//GEN-LAST:event_btnRemoverActionPerformed
 
     private void btnVoltarCatalogoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarCatalogoActionPerformed

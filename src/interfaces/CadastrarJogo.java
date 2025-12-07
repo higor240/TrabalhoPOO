@@ -5,6 +5,7 @@
 package interfaces;
 
 import classes.BibliotecaDeJogos;
+import classes.Jogo;
 import classes.JogoDigital;
 import classes.JogoFisico;
 import javax.swing.JOptionPane;
@@ -85,6 +86,11 @@ public class CadastrarJogo extends javax.swing.JFrame {
         getContentPane().add(btnSalvar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 180, -1, -1));
 
         btnDeletar.setText("DELETAR");
+        btnDeletar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeletarActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnDeletar, new org.netbeans.lib.awtextra.AbsoluteConstraints(309, 180, -1, -1));
 
         jLabel2.setText("NOME");
@@ -217,6 +223,7 @@ public class CadastrarJogo extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,"Salvo com Sucesso!!");
             limparCampos();
             biblioteca.atualizarTabela(biblioteca.getJogos(), tblBiblioteca);
+            btnDeletar.setVisible(true);
         }else if(indexVersao == 2){
             String Plataforma = (String) jComboBoxPlataforma.getSelectedItem();
             JogoDigital jogoDigital = new JogoDigital(txtNome.getText(),Double.parseDouble(txtPreco.getText()),Plataforma);
@@ -225,8 +232,9 @@ public class CadastrarJogo extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,"Salvo com Sucesso!!");
             limparCampos();
             biblioteca.atualizarTabela(biblioteca.getJogos(), tblBiblioteca);
+            btnDeletar.setVisible(true);
             
-            //falta mostrar na tabela
+            
         }
         
     }//GEN-LAST:event_btnSalvarActionPerformed
@@ -237,6 +245,23 @@ public class CadastrarJogo extends javax.swing.JFrame {
         telaInicial.setVisible(true);
         telaInicial.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnVoltarActionPerformed
+
+    private void btnDeletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeletarActionPerformed
+        int linha = tblBiblioteca.getSelectedRow();
+        if (linha == -1) {
+            JOptionPane.showMessageDialog(null, "Selecione um jogo!");
+            return;
+        }
+        BibliotecaDeJogos biblioteca = new BibliotecaDeJogos();
+        Jogo jogoSelecionado = biblioteca.getJogos().get(linha);
+        biblioteca.removerJogo(jogoSelecionado);
+        JOptionPane.showMessageDialog(null, "Jogo excluido!");
+        biblioteca.atualizarTabela(biblioteca.getJogos(), tblBiblioteca);
+        tblBiblioteca.clearSelection();
+        if(biblioteca.getJogos().isEmpty()){
+            btnDeletar.setVisible(false);   
+        }
+    }//GEN-LAST:event_btnDeletarActionPerformed
 
     /**
      * @param args the command line arguments
