@@ -4,6 +4,8 @@
  */
 package interfaces;
 
+import classes.BibliotecaDeJogos;
+
 /**
  *
  * @author Higor
@@ -17,6 +19,8 @@ public class ComprarJogo extends javax.swing.JFrame {
      */
     public ComprarJogo() {
         initComponents();
+        BibliotecaDeJogos biblioteca = new BibliotecaDeJogos();
+        biblioteca.atualizarTabela(biblioteca.getJogos(), tblBiblioteca);
     }
 
     /**
@@ -29,24 +33,32 @@ public class ComprarJogo extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblBiblioteca = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblBiblioteca.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "NOME", "PREÇO", "PLATAFORMA"
             }
-        ));
-        jScrollPane1.setViewportView(jTable1);
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(tblBiblioteca);
 
         jButton1.setText("ADICIONAR AO CARRINHO");
 
@@ -113,6 +125,6 @@ public class ComprarJogo extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tblBiblioteca;
     // End of variables declaration//GEN-END:variables
 }

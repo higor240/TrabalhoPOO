@@ -35,6 +35,11 @@ public class TelaInicial extends javax.swing.JFrame {
         });
 
         btnCompraJogo.setText("COMPRAR JOGO");
+        btnCompraJogo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCompraJogoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -72,6 +77,13 @@ public class TelaInicial extends javax.swing.JFrame {
         cadastrarJogo.setVisible(true);
         cadastrarJogo.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnCadastrarJogoActionPerformed
+
+    private void btnCompraJogoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCompraJogoActionPerformed
+        this.dispose();
+        ComprarJogo comprarJogo = new ComprarJogo();
+        comprarJogo.setVisible(true);
+        comprarJogo.setLocationRelativeTo(null);
+    }//GEN-LAST:event_btnCompraJogoActionPerformed
 
     
     public static void main(String args[]) {
