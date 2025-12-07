@@ -58,6 +58,7 @@ public class CadastrarJogo extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         lblEstoque = new javax.swing.JLabel();
         txtEstoque = new javax.swing.JTextField();
+        btnVoltar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -65,7 +66,7 @@ public class CadastrarJogo extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("CADASTRO DE JOGOS");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 536, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 536, -1));
 
         btnNovo.setText("NOVO");
         btnNovo.addActionListener(new java.awt.event.ActionListener() {
@@ -110,14 +111,14 @@ public class CadastrarJogo extends javax.swing.JFrame {
         getContentPane().add(txtPreco, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 90, 106, -1));
 
         jComboBoxPlataforma.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECIONAR", "PLAYSTATION", "XBOX" }));
-        getContentPane().add(jComboBoxPlataforma, new org.netbeans.lib.awtextra.AbsoluteConstraints(87, 124, -1, -1));
+        getContentPane().add(jComboBoxPlataforma, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 120, -1, -1));
 
         tblBiblioteca.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "NOME", "PREÇO", "PLATARFORMA"
+                "NOME", "PREÇO", "PLATAFORMA"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -138,14 +139,22 @@ public class CadastrarJogo extends javax.swing.JFrame {
                 jComboBoxVersaoActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBoxVersao, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 152, -1, -1));
+        getContentPane().add(jComboBoxVersao, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, -1, -1));
 
         jLabel5.setText("VERSÃO ");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 155, -1, -1));
 
         lblEstoque.setText("ESTOQUE");
         getContentPane().add(lblEstoque, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 59, -1, -1));
-        getContentPane().add(txtEstoque, new org.netbeans.lib.awtextra.AbsoluteConstraints(367, 56, 71, -1));
+        getContentPane().add(txtEstoque, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 50, 71, -1));
+
+        btnVoltar.setText("VOLTAR");
+        btnVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVoltarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnVoltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -218,6 +227,13 @@ public class CadastrarJogo extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnSalvarActionPerformed
 
+    private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
+        this.dispose();
+        TelaInicial telaInicial = new TelaInicial();
+        telaInicial.setVisible(true);
+        telaInicial.setLocationRelativeTo(null);
+    }//GEN-LAST:event_btnVoltarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -226,6 +242,10 @@ public class CadastrarJogo extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(() -> new CadastrarJogo().setVisible(true));
     }
     public void limparCampos(){
+        txtNome.setText("");
+        txtPreco.setText("");
+        txtEstoque.setText("");
+        btnNovo.setVisible(true);
         btnSalvar.setVisible(false);
         btnDeletar.setVisible(false);
         lblEstoque.setVisible(false);
@@ -244,6 +264,7 @@ public class CadastrarJogo extends javax.swing.JFrame {
     private javax.swing.JButton btnDeletar;
     private javax.swing.JButton btnNovo;
     private javax.swing.JButton btnSalvar;
+    private javax.swing.JButton btnVoltar;
     private javax.swing.JComboBox<String> jComboBoxPlataforma;
     private javax.swing.JComboBox<String> jComboBoxVersao;
     private javax.swing.JLabel jLabel1;
