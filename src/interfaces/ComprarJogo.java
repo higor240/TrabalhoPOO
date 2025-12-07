@@ -5,6 +5,9 @@
 package interfaces;
 
 import classes.BibliotecaDeJogos;
+import classes.Jogo;
+import classes.Carrinho;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -34,8 +37,8 @@ public class ComprarJogo extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         tblBiblioteca = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnAdicionar = new javax.swing.JButton();
+        btnFinalizarCompra = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -58,11 +61,26 @@ public class ComprarJogo extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        tblBiblioteca.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblBibliotecaMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tblBiblioteca);
 
-        jButton1.setText("ADICIONAR AO CARRINHO");
+        btnAdicionar.setText("ADICIONAR AO CARRINHO");
+        btnAdicionar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAdicionarActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("FINALIZAR COMPRA");
+        btnFinalizarCompra.setText("FINALIZAR COMPRA");
+        btnFinalizarCompra.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFinalizarCompraActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -75,10 +93,10 @@ public class ComprarJogo extends javax.swing.JFrame {
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(172, 172, 172)
-                        .addComponent(jButton1))
+                        .addComponent(btnAdicionar))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(193, 193, 193)
-                        .addComponent(jButton2)))
+                        .addComponent(btnFinalizarCompra)))
                 .addContainerGap(63, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -87,14 +105,37 @@ public class ComprarJogo extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
+                .addComponent(btnAdicionar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2)
+                .addComponent(btnFinalizarCompra)
                 .addContainerGap(34, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void tblBibliotecaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblBibliotecaMouseClicked
+        
+    }//GEN-LAST:event_tblBibliotecaMouseClicked
+
+    private void btnAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarActionPerformed
+        int linha = tblBiblioteca.getSelectedRow();
+        if (linha == -1) {
+            JOptionPane.showMessageDialog(null, "Selecione um jogo!");
+            return;
+        }
+        BibliotecaDeJogos biblioteca = new BibliotecaDeJogos();
+        Jogo jogoSelecionado = biblioteca.getJogos().get(linha);
+        Carrinho carrinho = new Carrinho();
+        carrinho.adicionar(jogoSelecionado);
+        JOptionPane.showMessageDialog(null, "Jogo adicionado ao carrinho!");
+    }//GEN-LAST:event_btnAdicionarActionPerformed
+
+    private void btnFinalizarCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFinalizarCompraActionPerformed
+        this.dispose();
+        FinalizarCompra finalizar = new FinalizarCompra();
+        finalizar.setVisible(true);
+    }//GEN-LAST:event_btnFinalizarCompraActionPerformed
 
     /**
      * @param args the command line arguments
@@ -122,8 +163,8 @@ public class ComprarJogo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btnAdicionar;
+    private javax.swing.JButton btnFinalizarCompra;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblBiblioteca;
     // End of variables declaration//GEN-END:variables
