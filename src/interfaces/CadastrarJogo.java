@@ -67,7 +67,7 @@ public class CadastrarJogo extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("CADASTRO DE JOGOS");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 536, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(86, 0, 380, -1));
 
         btnNovo.setText("NOVO");
         btnNovo.addActionListener(new java.awt.event.ActionListener() {
@@ -93,13 +93,13 @@ public class CadastrarJogo extends javax.swing.JFrame {
         });
         getContentPane().add(btnDeletar, new org.netbeans.lib.awtextra.AbsoluteConstraints(309, 180, -1, -1));
 
-        jLabel2.setText("NOME");
+        jLabel2.setText("NOME:");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 59, -1, -1));
 
-        jLabel3.setText("PREÇO");
+        jLabel3.setText("PREÇO:");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 93, -1, -1));
 
-        jLabel4.setText("PLATAFORMA");
+        jLabel4.setText("PLATAFORMA:");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 127, -1, -1));
 
         txtNome.addActionListener(new java.awt.event.ActionListener() {
@@ -137,7 +137,7 @@ public class CadastrarJogo extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tblBiblioteca);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 209, -1, 242));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 210, 550, 242));
 
         jComboBoxVersao.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECIONAR", "MIDIA FISICA", "MIDIA DIGITAL" }));
         jComboBoxVersao.addActionListener(new java.awt.event.ActionListener() {
@@ -147,12 +147,12 @@ public class CadastrarJogo extends javax.swing.JFrame {
         });
         getContentPane().add(jComboBoxVersao, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, -1, -1));
 
-        jLabel5.setText("VERSÃO ");
+        jLabel5.setText("VERSÃO :");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 155, -1, -1));
 
-        lblEstoque.setText("ESTOQUE");
-        getContentPane().add(lblEstoque, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 59, -1, -1));
-        getContentPane().add(txtEstoque, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 50, 71, -1));
+        lblEstoque.setText("ESTOQUE:");
+        getContentPane().add(lblEstoque, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 50, -1, -1));
+        getContentPane().add(txtEstoque, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 50, 71, -1));
 
         btnVoltar.setText("VOLTAR");
         btnVoltar.addActionListener(new java.awt.event.ActionListener() {
