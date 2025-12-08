@@ -6,9 +6,8 @@
             <file>file:/C:/Users/Higor/Documents/NetBeansProjects/GameStore/src/classes/GameStore.java</file>
             <file>file:/C:/Users/Higor/Documents/NetBeansProjects/GameStore/src/interfaces/TelaInicial.java</file>
             <file>file:/C:/Users/Higor/Documents/NetBeansProjects/GameStore/src/interfaces/CadastrarJogo.java</file>
-            <file>file:/C:/Users/Higor/Documents/NetBeansProjects/GameStore/src/classes/BibliotecaDeJogos.java</file>
-            <file>file:/C:/Users/Higor/Documents/NetBeansProjects/GameStore/src/classes/Carrinho.java</file>
             <file>file:/C:/Users/Higor/Documents/NetBeansProjects/GameStore/src/interfaces/ComprarJogo.java</file>
+            <file>file:/C:/Users/Higor/Documents/NetBeansProjects/GameStore/src/interfaces/TelaCarrinho.java</file>
             <file>file:/C:/Users/Higor/Documents/NetBeansProjects/GameStore/src/interfaces/FinalizarCompra.java</file>
         </group>
     </open-files>

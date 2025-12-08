@@ -22,6 +22,7 @@ public class FinalizarCompra extends javax.swing.JFrame {
         initComponents();
         Carrinho carrinho = new Carrinho();
         carrinho.AtualizarTabela(carrinho.getItens(), tblJogosSelecionados);
+        tblJogosSelecionados.setRowSelectionAllowed(false);
     }
 
     
