@@ -53,6 +53,7 @@ public class FinalizarCompra extends javax.swing.JFrame {
             lblEndereco.setVisible(true);
             lblRua.setVisible(true);
             txtEndereco.setVisible(true);
+            lblNumero.setVisible(true);
             txtNumeroCasa.setVisible(true);
             
         }else if(carrinho.temJogoFisico() == true){
@@ -261,12 +262,28 @@ public class FinalizarCompra extends javax.swing.JFrame {
     
     
     private void btnFinalizarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFinalizarPedidoActionPerformed
-        JOptionPane.showMessageDialog(null,"Obrigado pela Compra!");
+        Carrinho carrinho = new Carrinho();
+        if(carrinho.temJogoDigital() == true && carrinho.temJogoFisico()== true){
+            if (txtEndereco.getText().isEmpty() && txtNumeroCasa.getText().isEmpty() && txtEmail.getText().isEmpty()) {
+                JOptionPane.showMessageDialog(null,"Preenchar todos os campos!");
+                return;
+            }  
+        }else if (carrinho.temJogoDigital() == true) {
+            if (txtEmail.getText().isEmpty()) {
+                JOptionPane.showMessageDialog(null,"Preenchar todos os campos!");
+                return;
+            }
+        }else if (carrinho.temJogoFisico()) {
+            if (txtEndereco.getText().isEmpty() && txtNumeroCasa.getText().isEmpty() ) {
+                JOptionPane.showMessageDialog(null,"Preenchar todos os campos!");
+                return;
+            }
+        }
+        JOptionPane.showMessageDialog(null,"Pedido Enviado, obrigado pela Compra!");
         this.dispose();
         TelaInicial telaInicial = new TelaInicial();
         telaInicial.setVisible(true);
         telaInicial.setLocationRelativeTo(null);
-        Carrinho carrinho = new Carrinho();
         carrinho.limpar();
     }//GEN-LAST:event_btnFinalizarPedidoActionPerformed
 

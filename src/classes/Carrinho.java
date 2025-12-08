@@ -22,7 +22,7 @@ public class Carrinho {
         DefaultTableModel model = (DefaultTableModel) tabela.getModel();
         model.setRowCount(0);
         for(Jogo jogo:carrinho){
-            model.addRow(new Object[]{jogo.getNome(),jogo.getPreco(),jogo.getPlataforma()});
+            model.addRow(new Object[]{jogo.getNome(),jogo.getPreco(),jogo.getPlataforma(),jogo.getVersao()});
         
         }
     

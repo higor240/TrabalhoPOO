@@ -197,6 +197,11 @@ public class TelaCarrinho extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLimparActionPerformed
 
     private void btnFinalizarCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFinalizarCompraActionPerformed
+        Carrinho carrinho = new Carrinho();
+        if (carrinho.getItens().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Carrinho vazio!!");
+            return;
+        }
         this.dispose();
         FinalizarCompra finalizar = new FinalizarCompra();
         finalizar.setVisible(true);

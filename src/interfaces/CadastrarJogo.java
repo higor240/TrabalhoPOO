@@ -96,7 +96,7 @@ public class CadastrarJogo extends javax.swing.JFrame {
                 btnNovoActionPerformed(evt);
             }
         });
-        getContentPane().add(btnNovo, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 180, -1, -1));
+        getContentPane().add(btnNovo, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, 80, -1));
 
         btnSalvar.setText("SALVAR");
         btnSalvar.addActionListener(new java.awt.event.ActionListener() {
@@ -104,7 +104,7 @@ public class CadastrarJogo extends javax.swing.JFrame {
                 btnSalvarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnSalvar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 180, -1, -1));
+        getContentPane().add(btnSalvar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 180, -1, -1));
 
         btnDeletar.setText("DELETAR");
         btnDeletar.addActionListener(new java.awt.event.ActionListener() {
@@ -112,7 +112,7 @@ public class CadastrarJogo extends javax.swing.JFrame {
                 btnDeletarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnDeletar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 180, -1, -1));
+        getContentPane().add(btnDeletar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 180, -1, -1));
 
         jLabel2.setText("NOME:");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 59, -1, -1));

@@ -29,10 +29,10 @@
               <EmptySpace max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="160" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="btnCadastrarJogo" max="32767" attributes="0"/>
-                  <Component id="btnCompraJogo" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="125" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="btnCompraJogo" min="-2" pref="188" max="-2" attributes="0"/>
+                  <Component id="btnCadastrarJogo" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
@@ -43,11 +43,11 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
               <Component id="btnCadastrarJogo" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="btnCompraJogo" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="169" max="32767" attributes="0"/>
+              <EmptySpace pref="145" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -64,6 +64,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnCadastrarJogo">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="18" style="3"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="CADASTRAR JOGO"/>
       </Properties>
       <Events>
@@ -72,6 +75,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnCompraJogo">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="18" style="3"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="COMPRAR JOGO"/>
       </Properties>
       <Events>
