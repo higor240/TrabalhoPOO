@@ -23,6 +23,23 @@ public class CadastrarJogo extends javax.swing.JFrame {
      */
     public CadastrarJogo() {
         initComponents();
+        txtPreco.addKeyListener(new java.awt.event.KeyAdapter() {
+        public void keyTyped(java.awt.event.KeyEvent evt) {
+            char c = evt.getKeyChar();
+            if (!Character.isDigit(c)) {
+                evt.consume();
+            }
+        }
+    });
+        txtEstoque.addKeyListener(new java.awt.event.KeyAdapter() {
+        public void keyTyped(java.awt.event.KeyEvent evt) {
+            char c = evt.getKeyChar();
+            if (!Character.isDigit(c)) {
+                evt.consume();
+            }
+        }
+    });
+        
         BibliotecaDeJogos biblioteca = new BibliotecaDeJogos();
         biblioteca.atualizarTabela(biblioteca.getJogos(), tblBiblioteca);
         btnSalvar.setEnabled(false);
@@ -128,11 +145,11 @@ public class CadastrarJogo extends javax.swing.JFrame {
 
             },
             new String [] {
-                "NOME", "PREÇO", "PLATAFORMA"
+                "NOME", "PREÇO", "PLATAFORMA", "VERSÃO"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, false, false, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -222,7 +239,8 @@ public class CadastrarJogo extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,"Determine a quantidade de estoque!!");
         }else if(indexVersao == 1){
             String Plataforma = (String) jComboBoxPlataforma.getSelectedItem();
-            JogoFisico jogoFisico = new JogoFisico(txtNome.getText(),Double.parseDouble(txtPreco.getText()),Plataforma,Integer.parseInt(txtEstoque.getText()));
+            String versao = jComboBoxVersao.getSelectedItem().toString();
+            JogoFisico jogoFisico = new JogoFisico(txtNome.getText(),Double.parseDouble(txtPreco.getText()),Plataforma,versao,Integer.parseInt(txtEstoque.getText()));
             BibliotecaDeJogos biblioteca = new BibliotecaDeJogos();
             biblioteca.adicionarJogo(jogoFisico);
             JOptionPane.showMessageDialog(null,"Salvo com Sucesso!!");
@@ -231,7 +249,8 @@ public class CadastrarJogo extends javax.swing.JFrame {
             btnDeletar.setEnabled(true);
         }else if(indexVersao == 2){
             String Plataforma = (String) jComboBoxPlataforma.getSelectedItem();
-            JogoDigital jogoDigital = new JogoDigital(txtNome.getText(),Double.parseDouble(txtPreco.getText()),Plataforma);
+            String versao = jComboBoxVersao.getSelectedItem().toString();
+            JogoDigital jogoDigital = new JogoDigital(txtNome.getText(),Double.parseDouble(txtPreco.getText()),Plataforma,versao);
             BibliotecaDeJogos biblioteca = new BibliotecaDeJogos();
             biblioteca.adicionarJogo(jogoDigital);
             JOptionPane.showMessageDialog(null,"Salvo com Sucesso!!");

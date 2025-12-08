@@ -13,11 +13,13 @@ public class Jogo {
     protected String nome;
     protected double preco;
     protected String plataforma;
+    protected String versao;
 
-    public Jogo(String nome, double preco, String plataforma) {
+    public Jogo(String nome, double preco, String plataforma,String versao) {
         this.nome = nome;
         this.preco = preco;
         this.plataforma = plataforma;
+        this.versao = versao;
     }
 
     public String getNome() {
@@ -43,6 +45,15 @@ public class Jogo {
     public void setPlataforma(String plataforma) {
         this.plataforma = plataforma;
     }
+
+    public String getVersao() {
+        return versao;
+    }
+
+    public void setVersao(String versao) {
+        this.versao = versao;
+    }
+    
     
     
     

@@ -23,7 +23,8 @@ public class BibliotecaDeJogos {
         model.addRow(new Object[]{
             jogo.getNome(),
             jogo.getPreco(),
-            jogo.getPlataforma()
+            jogo.getPlataforma(),
+            jogo.getVersao()
         });
     }
 }

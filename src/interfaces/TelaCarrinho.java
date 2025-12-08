@@ -21,7 +21,7 @@ public class TelaCarrinho extends javax.swing.JFrame {
      */
     public TelaCarrinho() {
         initComponents();
-        classes.Carrinho carrinho = new classes.Carrinho();
+        Carrinho carrinho = new Carrinho();
         carrinho.AtualizarTabela(carrinho.getItens(), tblCarrinho);
         txtValorTotal.setText(String.valueOf(carrinho.calcularTotal()));
     }
@@ -53,11 +53,11 @@ public class TelaCarrinho extends javax.swing.JFrame {
 
             },
             new String [] {
-                "NOME", "PREÇO", "PLATAFORMA"
+                "NOME", "PREÇO", "PLATAFORMA", "VERSÃO"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {

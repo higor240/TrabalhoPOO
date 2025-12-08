@@ -13,8 +13,8 @@ public class JogoDigital extends Jogo {
     
     private String chaveAtivacao;
 
-    public JogoDigital(String nome, double preco, String plataforma) {
-        super(nome, preco, plataforma);
+    public JogoDigital(String nome, double preco, String plataforma, String versao) {
+        super(nome, preco, plataforma,versao);
         this.chaveAtivacao = UUID.randomUUID().toString().substring(0, 12).toUpperCase();//iisso gera um chave aleatoria pra enviar no email 
     }
 

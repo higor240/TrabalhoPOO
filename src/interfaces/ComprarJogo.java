@@ -48,17 +48,14 @@ public class ComprarJogo extends javax.swing.JFrame {
 
         tblBiblioteca.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+
             },
             new String [] {
-                "NOME", "PREÇO", "PLATAFORMA"
+                "NOME", "PREÇO", "PLATAFORMA", "VERSÃO"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
