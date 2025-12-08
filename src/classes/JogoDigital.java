@@ -15,7 +15,7 @@ public class JogoDigital extends Jogo {
 
     public JogoDigital(String nome, double preco, String plataforma) {
         super(nome, preco, plataforma);
-        this.chaveAtivacao = UUID.randomUUID().toString().substring(0, 12).toUpperCase();//para gera um chave aleatoria 
+        this.chaveAtivacao = UUID.randomUUID().toString().substring(0, 12).toUpperCase();//iisso gera um chave aleatoria pra enviar no email 
     }
 
     public String getChaveAtivacao() {

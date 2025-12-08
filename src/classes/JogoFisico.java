@@ -4,6 +4,8 @@
  */
 package classes;
 
+
+
 /**
  *
  * @author Higor
@@ -25,6 +27,8 @@ public class JogoFisico extends Jogo {
     public void setEstoque(int estoque) {
         this.estoque = estoque;
     }
+    
+    
     
     
 }

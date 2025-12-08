@@ -1,5 +1,8 @@
 
 package interfaces;
+
+import classes.Jogo;
+import classes.BibliotecaDeJogos;
 /**
  *
  * @author Higor
@@ -10,6 +13,10 @@ public class TelaInicial extends javax.swing.JFrame {
 
     public TelaInicial() {
         initComponents();
+        BibliotecaDeJogos biblioteca = new BibliotecaDeJogos();
+        if (biblioteca.getJogos().isEmpty()) {
+            btnCompraJogo.setEnabled(false);
+        }
     }
 
     
@@ -79,6 +86,7 @@ public class TelaInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCadastrarJogoActionPerformed
 
     private void btnCompraJogoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCompraJogoActionPerformed
+
         this.dispose();
         ComprarJogo comprarJogo = new ComprarJogo();
         comprarJogo.setVisible(true);

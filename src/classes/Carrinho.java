@@ -43,6 +43,24 @@ public class Carrinho {
         }
         return total;
     }
+    
+    public boolean temJogoDigital() {
+    for (Jogo jogo : itens) {
+        if (jogo instanceof JogoDigital) {
+            return true;
+        }
+    }
+    return false;
+    }
+    
+    public boolean temJogoFisico() {
+    for (Jogo jogo : itens) {
+        if (jogo instanceof JogoFisico) {
+            return true;
+        }
+    }
+    return false;
+    }
 
     public void limpar() {
         itens.clear();

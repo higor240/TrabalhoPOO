@@ -23,15 +23,19 @@ public class CadastrarJogo extends javax.swing.JFrame {
      */
     public CadastrarJogo() {
         initComponents();
-        btnSalvar.setVisible(false);
-        btnDeletar.setVisible(false);
+        BibliotecaDeJogos biblioteca = new BibliotecaDeJogos();
+        biblioteca.atualizarTabela(biblioteca.getJogos(), tblBiblioteca);
+        btnSalvar.setEnabled(false);
+        btnDeletar.setEnabled(false);
         lblEstoque.setVisible(false);
         txtEstoque.setVisible(false);
         txtNome.setEditable(false);
         txtPreco.setEditable(false);
         jComboBoxPlataforma.setEnabled(false);
         jComboBoxVersao.setEnabled(false);
-        
+        if (!biblioteca.getJogos().isEmpty()) {
+            btnDeletar.setEnabled(true);
+        }
     }
 
     /**
@@ -75,7 +79,7 @@ public class CadastrarJogo extends javax.swing.JFrame {
                 btnNovoActionPerformed(evt);
             }
         });
-        getContentPane().add(btnNovo, new org.netbeans.lib.awtextra.AbsoluteConstraints(152, 180, -1, -1));
+        getContentPane().add(btnNovo, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 180, -1, -1));
 
         btnSalvar.setText("SALVAR");
         btnSalvar.addActionListener(new java.awt.event.ActionListener() {
@@ -91,7 +95,7 @@ public class CadastrarJogo extends javax.swing.JFrame {
                 btnDeletarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnDeletar, new org.netbeans.lib.awtextra.AbsoluteConstraints(309, 180, -1, -1));
+        getContentPane().add(btnDeletar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 180, -1, -1));
 
         jLabel2.setText("NOME:");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 59, -1, -1));
@@ -107,14 +111,14 @@ public class CadastrarJogo extends javax.swing.JFrame {
                 txtNomeActionPerformed(evt);
             }
         });
-        getContentPane().add(txtNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 56, 177, -1));
+        getContentPane().add(txtNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, 177, -1));
 
         txtPreco.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtPrecoActionPerformed(evt);
             }
         });
-        getContentPane().add(txtPreco, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 90, 106, -1));
+        getContentPane().add(txtPreco, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, 80, -1));
 
         jComboBoxPlataforma.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECIONAR", "PLAYSTATION", "XBOX" }));
         getContentPane().add(jComboBoxPlataforma, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 120, -1, -1));
@@ -137,7 +141,7 @@ public class CadastrarJogo extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tblBiblioteca);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 210, 550, 242));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 550, 242));
 
         jComboBoxVersao.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECIONAR", "MIDIA FISICA", "MIDIA DIGITAL" }));
         jComboBoxVersao.addActionListener(new java.awt.event.ActionListener() {
@@ -185,8 +189,9 @@ public class CadastrarJogo extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBoxVersaoActionPerformed
 
     private void btnNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoActionPerformed
-        btnSalvar.setVisible(true);
-        btnNovo.setVisible(false);
+        btnSalvar.setEnabled(true);
+        btnNovo.setEnabled(false);
+        btnDeletar.setEnabled(false);
         txtNome.setEditable(true);
         txtPreco.setEditable(true);
         jComboBoxPlataforma.setEnabled(true);
@@ -223,7 +228,7 @@ public class CadastrarJogo extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,"Salvo com Sucesso!!");
             limparCampos();
             biblioteca.atualizarTabela(biblioteca.getJogos(), tblBiblioteca);
-            btnDeletar.setVisible(true);
+            btnDeletar.setEnabled(true);
         }else if(indexVersao == 2){
             String Plataforma = (String) jComboBoxPlataforma.getSelectedItem();
             JogoDigital jogoDigital = new JogoDigital(txtNome.getText(),Double.parseDouble(txtPreco.getText()),Plataforma);
@@ -259,7 +264,7 @@ public class CadastrarJogo extends javax.swing.JFrame {
         biblioteca.atualizarTabela(biblioteca.getJogos(), tblBiblioteca);
         tblBiblioteca.clearSelection();
         if(biblioteca.getJogos().isEmpty()){
-            btnDeletar.setVisible(false);   
+            btnDeletar.setEnabled(false);
         }
     }//GEN-LAST:event_btnDeletarActionPerformed
 
@@ -274,9 +279,9 @@ public class CadastrarJogo extends javax.swing.JFrame {
         txtNome.setText("");
         txtPreco.setText("");
         txtEstoque.setText("");
-        btnNovo.setVisible(true);
-        btnSalvar.setVisible(false);
-        btnDeletar.setVisible(false);
+        btnNovo.setEnabled(true);
+        btnSalvar.setEnabled(false);
+        btnDeletar.setEnabled(false);
         lblEstoque.setVisible(false);
         txtEstoque.setVisible(false);
         txtNome.setEditable(false);
