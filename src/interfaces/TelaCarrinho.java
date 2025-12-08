@@ -46,7 +46,7 @@ public class TelaCarrinho extends javax.swing.JFrame {
         txtValorTotal = new javax.swing.JTextField();
         btnRemoverSelecao = new javax.swing.JToggleButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         tblCarrinho.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
