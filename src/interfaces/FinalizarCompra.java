@@ -53,6 +53,7 @@ public class FinalizarCompra extends javax.swing.JFrame {
             lblEndereco.setVisible(true);
             lblRua.setVisible(true);
             txtEndereco.setVisible(true);
+            lblNumero.setVisible(true);
             txtNumeroCasa.setVisible(true);
             
         }else if(carrinho.temJogoFisico() == true){

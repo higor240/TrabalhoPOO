@@ -265,6 +265,9 @@ public class CadastrarJogo extends javax.swing.JFrame {
 
     private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
         this.dispose();
+        TelaInicial telaInicial = new TelaInicial();
+        telaInicial.setVisible(true);
+        telaInicial.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnVoltarActionPerformed
 
     private void btnDeletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeletarActionPerformed
