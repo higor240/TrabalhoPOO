@@ -182,9 +182,6 @@ public class ComprarJogo extends javax.swing.JFrame {
 
     private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuActionPerformed
         this.dispose();
-        TelaInicial telaInicial = new TelaInicial();
-        telaInicial.setVisible(true);
-        telaInicial.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnMenuActionPerformed
 
     /**

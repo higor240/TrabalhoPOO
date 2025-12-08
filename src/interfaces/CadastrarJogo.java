@@ -115,30 +115,30 @@ public class CadastrarJogo extends javax.swing.JFrame {
         getContentPane().add(btnDeletar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 180, -1, -1));
 
         jLabel2.setText("NOME:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 59, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, -1, -1));
 
         jLabel3.setText("PREÇO:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 93, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, -1, -1));
 
         jLabel4.setText("PLATAFORMA:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 127, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, -1, -1));
 
         txtNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNomeActionPerformed(evt);
             }
         });
-        getContentPane().add(txtNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, 177, -1));
+        getContentPane().add(txtNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, 177, -1));
 
         txtPreco.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtPrecoActionPerformed(evt);
             }
         });
-        getContentPane().add(txtPreco, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, 80, -1));
+        getContentPane().add(txtPreco, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, 80, -1));
 
         jComboBoxPlataforma.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECIONAR", "PLAYSTATION", "XBOX" }));
-        getContentPane().add(jComboBoxPlataforma, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 120, -1, -1));
+        getContentPane().add(jComboBoxPlataforma, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 120, 120, -1));
 
         tblBiblioteca.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -166,14 +166,14 @@ public class CadastrarJogo extends javax.swing.JFrame {
                 jComboBoxVersaoActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBoxVersao, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, -1, -1));
+        getContentPane().add(jComboBoxVersao, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 120, -1));
 
         jLabel5.setText("VERSÃO :");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 155, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, -1, -1));
 
         lblEstoque.setText("ESTOQUE:");
-        getContentPane().add(lblEstoque, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 50, -1, -1));
-        getContentPane().add(txtEstoque, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 50, 71, -1));
+        getContentPane().add(lblEstoque, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 60, -1, -1));
+        getContentPane().add(txtEstoque, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 60, 71, -1));
 
         btnVoltar.setText("VOLTAR");
         btnVoltar.addActionListener(new java.awt.event.ActionListener() {
@@ -265,9 +265,6 @@ public class CadastrarJogo extends javax.swing.JFrame {
 
     private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
         this.dispose();
-        TelaInicial telaInicial = new TelaInicial();
-        telaInicial.setVisible(true);
-        telaInicial.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnVoltarActionPerformed
 
     private void btnDeletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeletarActionPerformed
