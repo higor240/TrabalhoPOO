@@ -128,14 +128,14 @@ public class CadastrarJogo extends javax.swing.JFrame {
                 txtNomeActionPerformed(evt);
             }
         });
-        getContentPane().add(txtNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, 177, -1));
+        getContentPane().add(txtNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, 177, -1));
 
         txtPreco.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtPrecoActionPerformed(evt);
             }
         });
-        getContentPane().add(txtPreco, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, 80, -1));
+        getContentPane().add(txtPreco, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, 170, -1));
 
         jComboBoxPlataforma.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECIONAR", "PLAYSTATION", "XBOX" }));
         getContentPane().add(jComboBoxPlataforma, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 120, -1, -1));
@@ -166,7 +166,7 @@ public class CadastrarJogo extends javax.swing.JFrame {
                 jComboBoxVersaoActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBoxVersao, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, -1, -1));
+        getContentPane().add(jComboBoxVersao, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, -1, -1));
 
         jLabel5.setText("VERSÃO :");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 155, -1, -1));
