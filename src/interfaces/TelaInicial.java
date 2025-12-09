@@ -88,8 +88,6 @@ public class TelaInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCadastrarJogoActionPerformed
 
     private void btnCompraJogoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCompraJogoActionPerformed
-
-        this.dispose();
         ComprarJogo comprarJogo = new ComprarJogo();
         comprarJogo.setVisible(true);
         comprarJogo.setLocationRelativeTo(null);
