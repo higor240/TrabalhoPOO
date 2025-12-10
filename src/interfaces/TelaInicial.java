@@ -113,7 +113,9 @@ public class TelaInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCadastrarJogoActionPerformed
 
     private void btnCadastrarJogo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarJogo1ActionPerformed
-        // TODO add your handling code here:
+        this.dispose();
+        CadastrarCategoria cadastrarCat = new CadastrarCategoria();
+        cadastrarCat.setVisible(true);
     }//GEN-LAST:event_btnCadastrarJogo1ActionPerformed
 
     

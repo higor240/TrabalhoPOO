@@ -5,6 +5,8 @@
 package classes;
 
 import java.util.ArrayList;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -12,7 +14,7 @@ import java.util.ArrayList;
  */
 public class Categoria {
     String nome;
-    ArrayList<Categoria> categoria = new ArrayList<>();
+    public static ArrayList<Categoria> categorias = new ArrayList<>();
     
     
     public Categoria(String nome){
@@ -28,9 +30,17 @@ public class Categoria {
     }
 
     public ArrayList<Categoria> getCategoria() {
-        return categoria;
+        return categorias;
     }
     
+    public void AtualizarTabela(ArrayList<Categoria> Cat,JTable tabela){
+        DefaultTableModel model = (DefaultTableModel) tabela.getModel();
+        model.setRowCount(0);
+        for (Categoria categoria:Cat) {
+            model.addRow(new Object[]{categoria.nome});
+        }
+    
+    }
     
     
 }

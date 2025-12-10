@@ -4,6 +4,10 @@
  */
 package interfaces;
 
+import classes.Categoria;
+import static classes.Categoria.categorias;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Higor
@@ -32,7 +36,7 @@ public class CadastrarCategoria extends javax.swing.JFrame {
         btnSalvar = new javax.swing.JButton();
         txtNomeCat = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblCat = new javax.swing.JTable();
         btnExcluir = new javax.swing.JButton();
         btnEditar = new javax.swing.JButton();
 
@@ -41,24 +45,29 @@ public class CadastrarCategoria extends javax.swing.JFrame {
         jLabel1.setText("NOME");
 
         btnSalvar.setText("SALVAR");
+        btnSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalvarActionPerformed(evt);
+            }
+        });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblCat.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "NOME", "PREÇO", "PLATAFORMA", "VERSÃO", "CATEGORIA"
+                "NOME"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblCat);
 
         btnExcluir.setText("EXCLUIR");
 
@@ -104,6 +113,17 @@ public class CadastrarCategoria extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
+        if (txtNomeCat.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null,"Informe o nome!");
+            return;
+        }
+        Categoria categoria = new Categoria(txtNomeCat.getText());
+        categorias.add(categoria);
+        categoria.AtualizarTabela(categorias, tblCat);
+        txtNomeCat.setText("");
+    }//GEN-LAST:event_btnSalvarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -135,7 +155,7 @@ public class CadastrarCategoria extends javax.swing.JFrame {
     private javax.swing.JButton btnSalvar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tblCat;
     private javax.swing.JTextField txtNomeCat;
     // End of variables declaration//GEN-END:variables
 }
