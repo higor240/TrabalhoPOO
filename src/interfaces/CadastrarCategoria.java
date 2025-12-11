@@ -5,8 +5,8 @@
 package interfaces;
 
 import classes.Categoria;
-import static classes.Categoria.categorias;
 import javax.swing.JOptionPane;
+import static classes.Categoria.listaCategorias;
 
 /**
  *
@@ -70,6 +70,11 @@ public class CadastrarCategoria extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tblCat);
 
         btnExcluir.setText("EXCLUIR");
+        btnExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExcluirActionPerformed(evt);
+            }
+        });
 
         btnEditar.setText("EDITAR");
 
@@ -84,7 +89,7 @@ public class CadastrarCategoria extends javax.swing.JFrame {
                         .addGap(15, 15, 15)
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtNomeCat, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtNomeCat, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(69, 69, 69)
                         .addComponent(btnSalvar)
@@ -119,10 +124,23 @@ public class CadastrarCategoria extends javax.swing.JFrame {
             return;
         }
         Categoria categoria = new Categoria(txtNomeCat.getText());
-        categorias.add(categoria);
-        categoria.AtualizarTabela(categorias, tblCat);
+        listaCategorias.add(categoria);
+        categoria.AtualizarTabela(listaCategorias, tblCat);
         txtNomeCat.setText("");
     }//GEN-LAST:event_btnSalvarActionPerformed
+
+    private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
+        int linha = tblCat.getSelectedRow();
+        if (linha == - 1) {
+            JOptionPane.showMessageDialog(null,"Selecione uma categoria!");
+            return; 
+        }
+        Categoria categoria = new Categoria();
+        Categoria catSelecionada = Categoria.listaCategorias.get(linha);
+        categoria.deletarCategoria(catSelecionada);
+        JOptionPane.showMessageDialog(null,"Excluido!");
+        categoria.AtualizarTabela(listaCategorias, tblCat);
+    }//GEN-LAST:event_btnExcluirActionPerformed
 
     /**
      * @param args the command line arguments

@@ -14,11 +14,14 @@ import javax.swing.table.DefaultTableModel;
  */
 public class Categoria {
     String nome;
-    public static ArrayList<Categoria> categorias = new ArrayList<>();
+    public static ArrayList<Categoria> listaCategorias = new ArrayList<>();
     
     
     public Categoria(String nome){
         this.nome = nome;
+    }
+    public Categoria(){
+        
     }
 
     public String getNome() {
@@ -30,7 +33,7 @@ public class Categoria {
     }
 
     public ArrayList<Categoria> getCategoria() {
-        return categorias;
+        return listaCategorias;
     }
     
     public void AtualizarTabela(ArrayList<Categoria> Cat,JTable tabela){
@@ -39,6 +42,10 @@ public class Categoria {
         for (Categoria categoria:Cat) {
             model.addRow(new Object[]{categoria.nome});
         }
+    
+    }
+    public void deletarCategoria(Categoria cat){
+        listaCategorias.remove(cat);
     
     }
     
